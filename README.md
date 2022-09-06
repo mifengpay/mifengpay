@@ -90,16 +90,15 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 | 参数名       | 类型   | 是否必须 | 描述                                                           | 示例值                                  |
 | ------------ | ------ | :------: | -------------------------------------------------------------- | --------------------------------------- |
 | token        | string |    是    | 授权码                                                         | BA1B637A5C8D4B28ACB0889E559C5803        |
-| mch_id       | string |    是    | 商户号                                                         | 100123                                  |
-| channel      | string |    是    | 通道编码                                                       | channel                                 |
+| channel_no   | string |    是    | 通道编码                                                       | 1                                 |
 | subject      | string |    否    | 标题                                                           | subject                                 |
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
 | money        | string |    是    | 金额，单位为元，精确到小数点后两位                             | 1000                                    |
-| client_ip    | string |    是    | 客户IP                                                         | 000.000.00.00                           |
+| client_ip    | string |    是    | 客户IP                                                         | 0.0.0.0                           |
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
 | return_url   | string |    否    | 支付成功后跳转地址                                             | http://www.demo.com/paysucc.html        |
 | param        | string |    否    | 透传参数                                                       | xxxxxxxxxxxxxxxxx                       |
-| timestamp    | int    |    是    | 发送请求的时间戳,13位带毫秒                                    | 1626863144831                           |
+| timestamp    | int64  |    是    | 发送请求的时间戳,13位带毫秒                                    | 1626863144831                           |
 
 ### 响应参数
 | 参数名            | 类型   | 描述               |
@@ -108,9 +107,10 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 | order_no          | string | 平台订单号         |
 | out_order_no      | string | 商户订单号         |
 | money             | string | 订单金额           |
+| real_money        | string | 真实的订单金额     |
 | pay_url           | string | 支付链接           |
 | expired_time      | string | 过期时间           |
-| expired_timestamp | string | 过期时间时间戳毫秒 |
+| expired_timestamp | int64  | 过期时间时间戳毫秒 |
 
 ### 响应实例
 #### 请求成功
@@ -125,7 +125,7 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
         "money":"1000.00",
         "pay_url":"https://www.demo.com/#/?order_no=202204157885214563228",
         "expired_time":"2022-07-25 20:41:01",
-        "expired_timestamp":"1658752861000"
+        "expired_timestamp":1658752861000
     },
     "request_id":"ddec96d2165e4f3e8a642057db116983"
 }
@@ -146,7 +146,16 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 | 错误代码 | 错误描述       |
 | -------- | -------------- |
 | 1        | 找不到数据     |
-| 2        | 参数校验不通过 |
+| 2        | token校验不通过 |
+| 4        | 账号状态异常|
+| 9  | 插入数据库失败|
+| 10  | 插入数据库失败|
+
+| -1  | money 参数有误|
+| -2 | channel_no 参数有误|
+| -3 | out_order_no 参数有误| 
+| -4 | 找不到合适的银行卡，没有配置或者限额已超过 | 
+| -5 | 未开通对应通道的频道信息|
 
 
 ## 订单查询
@@ -259,7 +268,8 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 | 错误代码 | 错误描述       |
 | -------- | -------------- |
 | 1        | 找不到数据     |
-| 2        | 参数校验不通过 |
+| 2        | token校验不通过 |
+| 3 | 参数校验不通过|
 
 
 
