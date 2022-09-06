@@ -222,6 +222,7 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 | -------- | -------------- |
 | 1        | 找不到数据     |
 | 2        | 参数校验不通过 |
+| -1  | order_no 参数有误|
 
 
 ## 余额查询
