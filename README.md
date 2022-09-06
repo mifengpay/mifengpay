@@ -103,7 +103,7 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 ### 响应参数
 | 参数名            | 类型   | 描述               |
 | ----------------- | ------ | ------------------ |
-| mch_id            | string | 商户编号           |
+| mch_id            | int  | 商户编号           |
 | order_no          | string | 平台订单号         |
 | out_order_no      | string | 商户订单号         |
 | money             | string | 订单金额           |
