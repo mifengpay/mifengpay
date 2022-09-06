@@ -150,7 +150,6 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 | 4        | 账号状态异常|
 | 9  | 插入数据库失败|
 | 10  | 插入数据库失败|
-
 | -1  | money 参数有误|
 | -2 | channel_no 参数有误|
 | -3 | out_order_no 参数有误| 
