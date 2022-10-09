@@ -137,6 +137,7 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 | channel_no   | string |    是    | 通道编码                                                       | 1                                       |
 | subject      | string |    否    | 标题                                                           | subject                                 |
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
+| out_username | string |    否    | 商户用户名，用于后台展示用                                       | kehu1                               |
 | money        | string |    是    | 金额，单位为元，精确到小数点后两位                             | 1000                                    |
 | client_ip    | string |    是    | 客户IP                                                         | 0.0.0.0                                 |
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
@@ -333,6 +334,7 @@ channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&para
 | channel_no   | string |    是    | 通道编码                                                       | 1                                       |
 | subject      | string |    否    | 标题                                                           | subject                                 |
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
+| out_username | string |    否    | 商户用户名，用于后台展示用                                       | kehu1                               |
 | money        | string |    是    | 金额，单位为元，精确到小数点后两位                             | 1000                                    |
 | client_ip    | string |    是    | 客户IP                                                         | 0.0.0.0                                 |
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
