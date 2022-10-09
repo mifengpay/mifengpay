@@ -324,7 +324,7 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 - 请求地址: /v1/api/pay/sign/unifiedorder
 ### 签名字符串
 ```
-channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&param=%s&return_url=%s&subject=%s&timestamp=%d&key=%s
+channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&out_username=%s&param=%s&return_url=%s&subject=%s&timestamp=%d&key=%s
 ```
 ### 请求参数
 | 参数名       | 类型   | 是否必须 | 描述                                                           | 示例值                                  |
