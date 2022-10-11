@@ -137,8 +137,8 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 | channel_no   | string |    是    | 通道编码                                                       | 1                                       |
 | subject      | string |    否    | 标题                                                           | subject                                 |
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
-| out_username | string |    否    | 商户用户名，用于后台展示用                                       | kehu1                               |
-| money        | string |    是    | 金额，单位为元，精确到小数点后两位                             | 1000                                    |
+| out_username | string |    否    | 商户会员用户名，用于后台展示用                                    | kehu1                               |
+| money        | string |    是    | 金额，单位为元，精确到小数点后两位                               | 1000                                    |
 | client_ip    | string |    是    | 客户IP                                                         | 0.0.0.0                                 |
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
 | return_url   | string |    否    | 支付成功后跳转地址                                             | http://www.demo.com/paysucc.html        |
@@ -334,7 +334,7 @@ channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&out_
 | channel_no   | string |    是    | 通道编码                                                       | 1                                       |
 | subject      | string |    否    | 标题                                                           | subject                                 |
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
-| out_username | string |    否    | 商户用户名，用于后台展示用                                       | kehu1                               |
+| out_username | string |    否    | 商户会员用户名，用于后台展示用                                   | kehu1                               |
 | money        | string |    是    | 金额，单位为元，精确到小数点后两位                             | 1000                                    |
 | client_ip    | string |    是    | 客户IP                                                         | 0.0.0.0                                 |
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
@@ -540,7 +540,7 @@ mch_id=%d&timestamp=%d&key=%s
 | money        | string | 订单金额                            | 1000.00             |
 | notify_time  | string | 通知时间                            | 2006-01-02 15:04:05 |
 | order_no     | string | 平台订单号                          | 2015042321001004720 |
-| out_order_no | string | 商户订单号                          | xxxxxxxxxxxxxxxxx   |
+| out_order_no | string | 商户订单号                          | CZX00901239888173   |
 | param        | string | 透传参数                            | xxxxxxxxxxxxxxx     |
 | state        | int    | 1未出码,2待支付,3交易成功,4交易失败 | 1                   |
 | sign         | string | 签名，详情见签名规则                |
