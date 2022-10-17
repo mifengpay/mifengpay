@@ -143,6 +143,7 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
 | return_url   | string |    否    | 支付成功后跳转地址                                             | http://www.demo.com/paysucc.html        |
 | param        | string |    否    | 透传参数                                                       | xxxxxxxxxxxxxxxxx                       |
+| payer_name   | string |    否    | 付款人姓名，传入以后，付款人必须匹配                             | 马化腾                                   |
 | timestamp    | int64  |    是    | 发送请求的时间戳,13位带毫秒                                    | 1626863144831                           |
 
 ### 响应参数
@@ -324,7 +325,7 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 - 请求地址: /v1/api/pay/sign/unifiedorder
 ### 签名字符串
 ```
-channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&out_username=%s&param=%s&return_url=%s&subject=%s&timestamp=%d&key=%s
+channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&out_username=%s&param=%s&payer_name=%s&return_url=%s&subject=%s&timestamp=%d&key=%s
 ```
 ### 请求参数
 | 参数名       | 类型   | 是否必须 | 描述                                                           | 示例值                                  |
@@ -340,6 +341,7 @@ channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&out_
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
 | return_url   | string |    否    | 支付成功后跳转地址                                             | http://www.demo.com/paysucc.html        |
 | param        | string |    否    | 透传参数                                                       | xxxxxxxxxxxxxxxxx                       |
+| payer_name   | string |    否    | 付款人姓名，传入以后，付款人必须匹配                             | 马化腾                                   |
 | timestamp    | int64  |    是    | 发送请求的时间戳,13位带毫秒                                    | 1626863144831                           |
 
 ### 响应参数
@@ -554,6 +556,7 @@ mch_id=%d&money=%s&notify_time=%s&order_no=%s&out_order_no=%s&param=%s&state=%d&
 # 更新日志
 - 2022年8月9日 第一版初始更新
 - 2022年9月14日 增加签名规则， 优化细节
+- 2022年10月17日 加入付款人参数
 
 # 联系我们
 任何建议和问题随时 吐个槽
