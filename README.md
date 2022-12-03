@@ -415,8 +415,8 @@ mch_id=%d&order_no=%s&timestamp=%d&key=%s
 | --------- | ------ | :------: | ----------------- | -------------------------------- |
 | sign      | string |    是    | 签名              | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa |
 | mch_id    | int    |    是    | 商户编号          | 1000010                          |
-| mch_id    | int    |    是    | 商户号            | 100123                           |
 | order_no  | string |    是    | 订单号            | 2015042321001004720              |
+| out_order_no  | string |    是    | 商户订单号, 二选一         | 2015042321001004720              |
 | timestamp | int    |    是    | 时间戳,13位带毫秒 | 1626863144831                    |
 
 ### 响应参数
