@@ -562,6 +562,6 @@ mch_id=%d&money=%s&notify_time=%s&order_no=%s&out_order_no=%s&param=%s&state=%d&
 # 联系我们
 任何建议和问题随时 吐个槽
 
-官方tg: 
+官方tg: https://t.me/mifengpay
 
 官方网站: 
