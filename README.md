@@ -49,7 +49,7 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 
 | 参数名 | 类型   | 是否必须 | 描述                 |
 | ------ | ------ | :------: | -------------------- |
-| mch_id | string |    是    | 唯一性商户编号       |
+| mch_id | int |    是    | 唯一性商户编号       |
 | secret | string |    是    | 颁发给商户的接口密钥 |
 
 
@@ -134,7 +134,7 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 | 参数名       | 类型   | 是否必须 | 描述                                                           | 示例值                                  |
 | ------------ | ------ | :------: | -------------------------------------------------------------- | --------------------------------------- |
 | token        | string |    是    | 授权码                                                         | BA1B637A5C8D4B28ACB0889E559C5803        |
-| channel_no   | string |    是    | 通道编码                                                       | 1                                       |
+| channel_no   | int |    是    | 通道编码                                                       | 1                                       |
 | subject      | string |    否    | 标题                                                           | subject                                 |
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
 | out_username | string |    否    | 商户会员用户名，用于后台展示用                                    | kehu1                               |
@@ -333,7 +333,7 @@ channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&out_
 | ------------ | ------ | :------: | -------------------------------------------------------------- | --------------------------------------- |
 | sign         | string |    是    | 签名                                                           | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa        |
 | mch_id       | int    |    是    | 商户编号                                                       | 1000010                                 |
-| channel_no   | string |    是    | 通道编码                                                       | 1                                       |
+| channel_no   | int |      是    | 通道编码                                                       | 1                                       |
 | subject      | string |    否    | 标题                                                           | subject                                 |
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
 | out_username | string |    否    | 商户会员用户名，用于后台展示用                                   | kehu1                               |
