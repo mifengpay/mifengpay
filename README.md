@@ -343,7 +343,7 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 | money         | string |    是    | 金额         | 1000                   |
 | notify_url    | string |    是    | 回调地址       | 127.0.0.1:27110/notify |
 | out_order_no  | string |    是    | 订单编号       | 20230412110329         |
-| Param         | string |    是    | 透传参数       | {"ss":"222"}           |
+| param         | string |    是    | 透传参数       | {"ss":"222"}           |
 | timestamp     | int    |    是    | 时间戳,13位带毫秒 | 1626863144831          |
 
 ### 响应参数
@@ -703,7 +703,7 @@ address=%d&bank_name=%s&bank_no=%d&card_username=%s&client_ip=%s&level=%s&memo=%
 | money         | string |    是    | 金额         | 1000                   |
 | notify_url    | string |    是    | 回调地址       | 127.0.0.1:27110/notify |
 | out_order_no  | string |    是    | 订单编号       | 20230412110329         |
-| Param         | string |    是    | 透传参数       | {"ss":"222"}           |
+| param         | string |    是    | 透传参数       | {"ss":"222"}           |
 | timestamp     | int    |    是    | 时间戳,13位带毫秒 | 1626863144831          |
 | sign          | string |    是    | 签名，详情见签名规则 |          |
 
