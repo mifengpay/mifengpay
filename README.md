@@ -143,6 +143,7 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
 | out_username | string |    否    | 商户会员用户名，用于后台展示用                                    | kehu1                               |
 | money        | string |    是    | 金额，单位为元，精确到小数点后两位                               | 1000                                    |
+|level_name    | string |    是    | 通道名称                             | 测试通道1                                    |
 | client_ip    | string |    是    | 客户IP                                                         | 0.0.0.0                                 |
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
 | return_url   | string |    否    | 支付成功后跳转地址                                             | http://www.demo.com/paysucc.html        |
@@ -463,6 +464,7 @@ channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&out_
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
 | out_username | string |    否    | 商户会员用户名，用于后台展示用                                   | kehu1                               |
 | money        | string |    是    | 金额，单位为元，精确到小数点后两位                             | 1000                                    |
+|level_name    | string |    是    | 通道名称                             | 测试通道1                                    |
 | client_ip    | string |    是    | 客户IP                                                         | 0.0.0.0                                 |
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
 | return_url   | string |    否    | 支付成功后跳转地址                                             | http://www.demo.com/paysucc.html        |
