@@ -143,7 +143,7 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
 | out_username | string |    否    | 商户会员用户名，用于后台展示用                                    | kehu1                               |
 | money        | string |    是    | 金额，单位为元，精确到小数点后两位                               | 1000                                    |
-|level_name    | string |    是    | 通道名称                             | 测试通道1                                    |
+| level_name    | string |    否    | 通道名称, 从银行卡渠道列表获取                            | wai1                                    |
 | client_ip    | string |    是    | 客户IP                                                         | 0.0.0.0                                 |
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
 | return_url   | string |    否    | 支付成功后跳转地址                                             | http://www.demo.com/paysucc.html        |
@@ -398,16 +398,12 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 | 参数名           | 类型     | 是否必须 | 描述     | 示例值            |
 |---------------|--------| :------: |--------|----------------|
 | token         | string |    是    | 描述     | 12345223412342 |
-| page          | int    |    是    | 页数     | 1              |
-| limit         | int    |    是    | 每页条数   | 10             |
+
 
 ### 响应参数
 | 参数名               | 类型     | 描述           |
 |-------------------|--------|--------------|
-| user_id           | int    | 商户ID         |
-| username          | string | 商户名称         |
 | channel_name      | string | 通道名称         |
-| open_status       | int    | 状态 0禁用, 1可用  |
 | memo              | string | 备注           |
 
 ### 响应实例
@@ -464,7 +460,7 @@ channel_no=%d&client_ip=%s&mch_id=%d&money=%s&notify_url=%s&out_order_no=%s&out_
 | out_order_no | string |    是    | 商户订单号                                                     | 20150320010101001                       |
 | out_username | string |    否    | 商户会员用户名，用于后台展示用                                   | kehu1                               |
 | money        | string |    是    | 金额，单位为元，精确到小数点后两位                             | 1000                                    |
-|level_name    | string |    是    | 通道名称                             | 测试通道1                                    |
+| level_name    | string |    否    | 通道名称,银行卡渠道列表获取                             | wai1                                    |
 | client_ip    | string |    是    | 客户IP                                                         | 0.0.0.0                                 |
 | notify_url   | string |    是    | 异步通知地址，支付成功后将支付成功消息以POST请求发送给这个网址 | http://www.demo.com/recieve_notice.html |
 | return_url   | string |    否    | 支付成功后跳转地址                                             | http://www.demo.com/paysucc.html        |
@@ -752,7 +748,7 @@ address=%d&bank_name=%s&bank_no=%d&card_username=%s&client_ip=%s&level=%s&memo=%
 ```
 
 
-## 银行卡通道列表
+## 银行卡通道列表签名
 ### 接口概述
 - 功能: 银行卡通道列表
 - 请求方式: POST
@@ -766,8 +762,6 @@ page=%d&limit=%s&mch_id=%d&timestamp=%d&key=%s
 ### 请求参数
 | 参数名            | 类型     | 是否必须 | 描述         | 示例值              |
 |----------------|--------|:----:|------------|------------------|
-| page           | int    |  是   | 页数         | 1                |
-| limit          | int    |  是   | 每页条数       | 10               |
 | mch_id         | int    |   是  | 商户ID       | 62148301****3544 |
 | timestamp      | int    |  是   | 时间戳,13位带毫秒 | 1626863144831    |
 | sign           | string |  是   | 签名，详情见签名规则 |                  |
@@ -775,10 +769,7 @@ page=%d&limit=%s&mch_id=%d&timestamp=%d&key=%s
 ### 响应参数
 | 参数名               | 类型     | 描述           |
 |-------------------|--------|--------------|
-| user_id           | int    | 商户ID         |
-| username          | string | 商户名称         |
-| channel_name      | string | 通道名称         |
-| open_status       | int    | 状态 0禁用, 1可用  |
+| level_name        | string | 通道名称         |
 | memo              | string | 备注           |
 
 ### 响应实例
@@ -788,11 +779,8 @@ page=%d&limit=%s&mch_id=%d&timestamp=%d&key=%s
     "code":0,
     "msg":"ok",
     "data":{
-         "user_id":1,
-         "username":"张三",
-         "channel_name":"测试通道",
-         "open_status":1,
-         "memo":"备注信息"
+        "level_name":"测试通道",
+        "memo":"备注信息"
     },
     "request_id":"ddec96d2165e4f3e8a642057db116983"
 }
