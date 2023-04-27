@@ -756,7 +756,7 @@ address=%d&bank_name=%s&bank_no=%d&card_username=%s&client_ip=%s&level=%s&memo=%
 
 ### 签名字符串
 ```
-page=%d&limit=%s&mch_id=%d&timestamp=%d&key=%s
+mch_id=%d&timestamp=%d&key=%s
 ```
 
 ### 请求参数
