@@ -412,13 +412,13 @@ stringSignTemp=stringA + "&key=api_key" //注：api_key为商户平台设置的�
 {
     "code":0,
     "msg":"ok",
-    "data":{
-         "user_id":1,
-         "username":"张三",
-         "channel_name":"测试通道",
-         "open_status":1,
-         "memo":"备注信息"
-    },
+    "data":[{
+        "level_name":"wai1",
+        "memo":"外层1"
+    },{
+        "level_name":"nei1",
+        "memo":"内层1"
+    }],
     "request_id":"ddec96d2165e4f3e8a642057db116983"
 }
 ```
@@ -748,7 +748,7 @@ address=%d&bank_name=%s&bank_no=%d&card_username=%s&client_ip=%s&level=%s&memo=%
 ```
 
 
-## 银行卡通道列表签名
+## 银行卡渠道列表签名
 ### 接口概述
 - 功能: 银行卡通道列表
 - 请求方式: POST
@@ -778,10 +778,13 @@ page=%d&limit=%s&mch_id=%d&timestamp=%d&key=%s
 {
     "code":0,
     "msg":"ok",
-    "data":{
-        "level_name":"测试通道",
-        "memo":"备注信息"
-    },
+    "data":[{
+        "level_name":"wai1",
+        "memo":"外层1"
+    },{
+        "level_name":"nei1",
+        "memo":"内层1"
+    }],
     "request_id":"ddec96d2165e4f3e8a642057db116983"
 }
 ```
