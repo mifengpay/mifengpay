@@ -47,7 +47,7 @@
 - 请求地址: v1/api/pay/accesstoken
 
 ```bash
-POST https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBPN5SFP7MW6EQHXSCGLMAZVJZT4I
+POST https://open.mifengpay.com/v1/api/pay/accesstoken
 ```
 ```json
 {
