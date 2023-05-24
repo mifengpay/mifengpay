@@ -43,11 +43,18 @@
 
 ##### 接口地址
 - 功能: 统一下单
-- 请求方式: GET / POST
+- 请求方式: POST
 - 请求地址: v1/api/pay/accesstoken
 
 ```bash
-GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBPN5SFP7MW6EQHXSCGLMAZVJZT4I
+POST https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBPN5SFP7MW6EQHXSCGLMAZVJZT4I
+```
+```json
+{
+	"mch_id": 10086,
+	"secret": "4ZWQBPN5SFP7MW6EQHXSCGLMAZVJZT4I",
+	"request_id": "@guid()"
+} 
 ```
 ##### 参数说明
 
@@ -55,6 +62,7 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 | ------ | ------ | :------: | -------------------- |
 | mch_id | int |    是    | 唯一性商户编号       |
 | secret | string |    是    | 颁发给商户的接口密钥 |
+| request_id| string | 否 | GUID, 可不传, 做幂等或者客户自己回调用 |
 
 
 ##### 返回说明
@@ -62,16 +70,19 @@ GET https://open.mifengpay.com/v1/api/pay/accesstoken?mch_id=10086&secret=4ZWQBP
 | ---------- | ------ | ------------------------------------------- |
 | token      | string | 授权码                                      |
 | expires_in | int    | 有效时间，默认为2小时，过期后须重新发起授权 |
-
+| request_id| string | GUID|
 
 ```json
 {
-    "code": 0,
-    "msg": "OK",
-    "data": {
-        "token": "ACCESS_TOKEN",
-        "expires_in": 7200
-    }
+	"code": 0,
+	"msg": "",
+	"error": "",
+	"data": {
+		"token": "B7C5F08637FB4E8BADDAFF698187AE5B",
+		"expires_in": 43200
+	},
+	"request_id": "db7EeF4C-540f-e5b7-DB06-0cebfE745dA6",
+	"req": null
 }
 ```
 ### 签名规则
